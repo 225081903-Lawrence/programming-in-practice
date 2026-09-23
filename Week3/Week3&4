@@ -1,0 +1,61 @@
+#include <stdio.h>
+//Employ salary calculator
+int main (){
+    float basicSalary = 0.00;
+    float housing = 0.00;
+    float transport = 0.00;
+    float tax = 0.00;
+    float grossSalary = 0.00;
+    float netSaslary = 0.00;
+    // OPERATION AND DESICION MAKING CONCEPTS
+    char supplierName [50];
+    float price = 0.00;
+    float budget = 0.00;
+    int registered = 0;
+    int documentComplete = 0;
+
+      printf(" enter  basic salary");
+     scanf("%f", &basicSalary);
+
+
+     printf(" enter house allowence");
+     scanf("%f", &housing);
+
+      printf(" enter transport allowence");
+     scanf("%f", &basicSalary);
+
+      printf(" enter tax");
+     scanf("%f", & tax);
+
+     grossSalary = basicSalary + housing + transport;
+     netSaslary =  grossSalary - tax;
+printf("\n Gross Salary : %2f",grossSalary);
+printf("Net Salary: %2f\n", netSaslary);\
+
+/* the operation 
+Desicion making concept */
+ printf("Enter supplier name");
+ scanf("%49s", supplierName);
+
+ printf("Enter tender price");
+ scanf("%f", &price);
+
+ printf("Enter Available budget");
+ scanf("%f", &budget);
+ printf("Is supplier registered? (1=yes, 0=No): ");
+ scanf("%d", registered);
+
+ printf("Are all documents complete? (1=Yes, 0=No): ");
+ scanf("%d", documentComplete);
+
+ if(registered == 0 || documentComplete == 0){
+   printf("\nSupplier : %s\n, supplierName");
+   printf("Status : Disqualified\n");
+ }else if(price > budget){
+
+    printf("\nSupplier :%s\n", supplierName);
+    printf("Status: Disqualified\n");
+ } 
+
+return 0;
+}
