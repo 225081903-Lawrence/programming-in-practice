@@ -1,0 +1,180 @@
+#include<stdio.h>
+#include <string.h>
+int main(){
+    char name [50];
+    char email[50];
+    char phone [50];
+    char town [50];
+
+    printf("enter supplier name: ");
+    scanf("%s", name);
+
+    printf("enter email: ");
+    scanf("%s", email);
+
+    printf("enter phone number");
+    scanf("%s", phone);
+
+    printf(" enter town");
+    scanf("%s", town);
+
+    printf("\n---SUPPLIER DETAILS---\n");
+    printf("Name : %s\n , name");
+    printf("Email : %s\n , email");
+    printf("Phone : %s\n , phone");
+    printf("Town : %s\n , town");
+
+    printf("\n---STRING LENGTHS---\n");
+    printf("Supplier name length : %lu\n", strlen(name));
+    printf("Email length : %lu\n", strlen(email));
+        printf("Town length : %lu\n", strlen(town));
+    
+    char supplierName[100];
+    char suppler1[] = "ABC Office Supplier";
+    char supplier2[] = "Namibia Stationary";
+
+    printf (" Enter supplier name to search: ");
+    scanf("%[^\n]", supplierName);
+
+    if(strcmp(supplierName, suppler1) ==0){
+        printf("Supplier found\n");
+    }
+    else if (strcmp(supplierName, supplier2) == 0){
+        printf("Supplier found");
+    }
+    else{
+        printf("Supplier not found\n");
+    }
+    char original[100];
+    char backup[100];
+    printf("Enter supplier name: ");
+    scanf("%[^\n]", original);
+
+    strcpy(backup, original);
+    printf("\n---SUPPLIER INFORMATION---\n");
+    printf("Original supplier name: %s\n", original);
+    printf("Backup supplier name: %s\n", backup);
+
+
+    char description[200];
+    printf("enter supplier name");
+    scanf("[^\n]", supplierName);
+
+    printf("enter town");
+    scanf("%[^\n]", town);
+
+    strcat(description, supplierName);
+    strcat(description, "operare in");
+    strcat(description, town);
+    strcat(description, ".");
+
+    char searchName[100];
+    int choice;
+    int supplierAdded = 0;
+
+    do{
+        printf("\n========================\n");
+        printf("MUNICIPAL FINANCIAL MANAGEMENT");
+        printf("\n========================\n");
+        printf("1. Add  Supplier\n");
+        printf("2. Display Supplier\n");
+        printf("3. Search Supplier\n");
+        printf("4. Show Name Length\n");
+        printf("5. Exit\n");
+
+        printf("\nEnter choice :");
+        scanf("%d", &choice);
+        printf("\nEnter choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+
+            case 1:
+                
+                printf("\n--- ADD SUPPLIER ---\n");
+
+                printf("Enter supplier name: ");
+                scanf(" %[^\n]", supplierName);
+                printf("Enter email: ");
+                scanf("%s", email);
+
+                printf("Enter phone: ");
+                scanf("%s", phone);
+
+                printf("Enter town: ");
+                scanf(" %[^\n]", town);
+
+                strcpy(backup, supplierName);
+
+                   supplierAdded = 1;
+
+                printf("\nSupplier added successfully!\n");
+                break;
+
+            case 2:
+                
+                if (supplierAdded == 1) {
+                    printf("\n--- SUPPLIER DETAILS ---\n");
+                    printf("Name : %s\n", supplierName);
+                    printf("Email: %s\n", email);
+                    printf("Phone: %s\n", phone);
+                    printf("Town : %s\n", town);
+
+                    printf("Backup Name: %s\n", backup);
+
+                    description[0] = '\0';
+
+                    strcat(description, supplierName);
+                    strcat(description, " operates in ");
+                    strcat(description, town);
+                    strcat(description, ".");
+
+                    printf("Description: %s\n", description);
+
+                } else {
+                    printf("\nNo supplier added yet!\n");
+                }
+                break;
+
+                case 3:
+                
+                if (supplierAdded == 1) {
+
+                    printf("\nEnter supplier name to search: ");
+                    scanf(" %[^\n]", searchName);
+
+                    if (strcmp(searchName, supplierName) == 0) {
+                        printf("Supplier found!\n");
+                    } else {
+                        printf("Supplier not found!\n");
+                    }
+                    } else {
+                    printf("\nNo supplier available to search!\n");
+                }
+                break;
+
+            case 4:
+               
+                if (supplierAdded == 1) {
+
+                    printf("\n--- SUPPLIER NAME LENGTH ---\n");
+                    printf("Supplier name length: %lu\n",
+                           strlen(supplierName));
+                         } else {
+                    printf("\nNo supplier added yet!\n");
+                }
+                break;
+
+            case 5:
+                printf("\nThank you for using MFMS!\n");
+                break;
+
+            default:
+                printf("\nInvalid choice! Please try again.\n");
+            }
+        } while (choice != 5);
+
+
+
+    return 0;
+}
