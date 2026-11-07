@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int main(){
+   float salary [50];
+   float total = 0.0;
+   float highest = 0.0;
+   float lowest = 0.0;
+   float average = 0.0;
+
+for(int i = 0; i <= 50; i++){
+printf("Enter salary %d: ", i+1);
+scanf("%f", &salary[i]);
+
+   }
+ printf("\n---All salary---\n");
+   for(int i = 0; i < 50; i++){
+printf("%2f\n",salary[i]);
+   }
+   for( int i = 0; i<50; i++)
+   {
+      total = total + salary[i];
+      if(i == 1){
+         highest = salary[i];
+         lowest = salary[i];
+      }
+      if(salary[i]>highest){
+         highest = salary[i];
+      }
+      if(salary[i]<lowest){
+         lowest = salary[1];
+      }
+
+   }
+   average = total/50;
+   printf("highest salary%2f\n", highest);
+   printf("lowest salary %2f\n",lowest);
+   printf("the average is%2f\n", average);
+   
+   int search = 100;
+   int found = 0;
+   for( int i = 0; i<50; i++){
+      if (salary[i] == search){
+         found = 1;
+         printf("salary found at position %d\n", i);
+         break;
+      }
+   }
+   if(!found){
+      printf("salary not found");
+   }
+
+   // department budgets
+   float budgets[10];
+   for(int i = 0; i <= 50; i++){
+printf("Enter budgets%d: ", i+1);
+scanf("%f", &budgets[i]);
+printf("Display budgets", budgets[i]);
+
+      for(int i = 0; i<50; i++){
+   total = total + budgets[i];
+      }
+      average = total /50;
+
+      // vehicle registration number
+      char registrations[50][50];
+      for( int i= 0; i<50; i++ ){
+         printf("enter vehicle registration%c" , i+1);
+         scanf("%c",registrations[i]);
+         printf("registration number%c" , registrations[i]);
+      }
+      char search = "nali" ;
+   int found = 0;
+   for( int i = 0; i<50; i++){
+      if (registrations[i] == search){
+         found = 1;
+         printf("registration number found at position %c\n", i);
+         break;
+      }
+   }
+   if(!found){
+      printf("registration number not found");
+   }
+  char Search[30];
+  scanf("%19s",Search);
+  for(int i=0; i<20; i++){
+  if(strcmp(registrations[i],Search) ==0);
+  printf("Found! %s is at %d", Search,i+i);
+  break;
+  }
+
+return 0;
+}
